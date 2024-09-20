@@ -1,37 +1,13 @@
 # L9HWTF
-Lesson9HW Terraform
+Lesson9HW AWS Infrastructure with Terraform
 
-graph TD
-    A[aws_infra] --> B[modules]
-    A --> C[main.tf]
-    A --> D[variables.tf]
-    A --> E[outputs.tf]
-    A --> F[provider.tf]
-    A --> G[backend.tf]
-    A --> H[README.md]
-    
-    B --> I[vpc]
-    B --> J[alb]
-    B --> K[asg]
-    B --> L[rds]
-    B --> M[security]
-    
-    I --> I1[main.tf]
-    I --> I2[variables.tf]
-    I --> I3[outputs.tf]
-    
-    J --> J1[main.tf]
-    J --> J2[variables.tf]
-    J --> J3[outputs.tf]
-    
-    K --> K1[main.tf]
-    K --> K2[variables.tf]
-    K --> K3[outputs.tf]
-    
-    L --> L1[main.tf]
-    L --> L2[variables.tf]
-    L --> L3[outputs.tf]
-    
-    M --> M1[main.tf]
-    M --> M2[variables.tf]
-    M --> M3[outputs.tf]
+This Terraform project provisions a complete AWS infrastructure with networking, compute resources, and database management. It uses reusable modules for VPC, Application Load Balancer (ALB), Auto Scaling Group (ASG), and RDS, along with remote state management via S3 and DynamoDB.
+
+## Architecture Diagram
+The infrastructure consists of the following components:
+
+* **VPC**: A Virtual Private Cloud with public and private subnets across two Availability Zones (AZs).
+* **ALB**: An Application Load Balancer deployed in the public subnets, serving web traffic.
+* **ASG**: An Auto Scaling Group managing EC2 instances across private subnets, configured for high availability and scaling based on CPU utilization.
+* **RDS**: A MySQL database using AWS RDS in a Multi-AZ setup, ensuring high availability and data redundancy.
+* **Security**: Security Groups for ALB, EC2, and RDS, restricting access based on best practices.
