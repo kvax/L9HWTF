@@ -1,5 +1,4 @@
-# L9HWTF
-Lesson9HW AWS Infrastructure with Terraform
+# Lesson9HW AWS Infrastructure with Terraform
 
 This Terraform project provisions a complete AWS infrastructure with networking, compute resources, and database management. It uses reusable modules for VPC, Application Load Balancer (ALB), Auto Scaling Group (ASG), and RDS, along with remote state management via S3 and DynamoDB.
 
